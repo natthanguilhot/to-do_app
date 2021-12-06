@@ -7,13 +7,13 @@
             <div class="flex justify-center items-center m-10">
                 <label for="task">Votre tâche :</label>
                 <input type="text" name="task" v-model="inputTask" @keypress.enter="addTask()" id="task" placeholder="Faire la lessive" class="border-2 rounded ml-2 outline-none p-1 focus:ring-2 focus:ring-yellow-400 text-gray-800" minlength="1"/>
-                <button @click="addTask()" class="h-8 w-8 border ml-2 rounded focus:ring-2 focus:ring-yellow-400 outline-none"><i class="fas fa-pen"></i></button>
+                <button @click="addTask()" class="h-8 w-8 border ml-2 rounded focus:ring-2 focus:ring-yellow-400 outline-none" aria-label="Ajouter une tâche"><i class="fas fa-pen"></i></button>
             </div>
             <div class="flex flex-col justify-center items-start">
                 <div v-for="task in tasks" :key="task" class="flex justify-center items-center">
                     <input type="checkbox" v-model="task.done" :value="task.done" :id="task.task + ' ' + task.id" class="mr-2 w-5 h-5 focus:ring-2 focus:ring-yellow-400 outline-none" @change="updateLS()"/>
                     <label :for="task.task + ' ' + task.id" :class="{'line-through opacity-70' : task.done}" class="transition-all duration-300">{{task.task}}</label>
-                    <button class="ml-2 text-red-400 cursor-pointer border rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none" @click="deleteTask(task.id, task.task)">X</button>
+                    <button class="ml-2 text-red-400 cursor-pointer border rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none" @click="deleteTask(task.id, task.task)" >X</button>
                 </div>
             </div>
         </main>
