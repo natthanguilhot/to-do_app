@@ -10,10 +10,10 @@
                 <button @click="addTask()" class="h-8 w-8 border ml-2 rounded focus:ring-2 focus:ring-yellow-400 outline-none" aria-label="Ajouter une tâche"><i class="fas fa-pen"></i></button>
             </div>
             <div class="flex flex-col justify-center items-start">
-                <div v-for="task in tasks" :key="task" class="flex justify-center items-center">
+                <div v-for="(task, index) in tasks" :key="task" class="flex justify-center items-center">
                     <input type="checkbox" v-model="task.done" :value="task.done" :id="task.task + ' ' + task.id" class="mr-2 w-5 h-5 focus:ring-2 focus:ring-yellow-400 outline-none" @change="updateLS()"/>
                     <label :for="task.task + ' ' + task.id" :class="{'line-through opacity-70' : task.done}" class="transition-all duration-300">{{task.task}}</label>
-                    <button class="ml-2 text-red-400 cursor-pointer border rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none" @click="deleteTask(task.id, task.task)" >X</button>
+                    <button class="ml-2 text-red-400 cursor-pointer border rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none" @click="deleteTask(index)" >X</button>
                 </div>
             </div>
         </main>
@@ -47,19 +47,13 @@ export default {
                 this.updateLS();
             }
         },
-        deleteTask(id, text){
-            let i = 0;
-            for(let task of this.tasks){
-                if(task.id == id && task.task == text){
-                    this.tasks.splice(i, 1)
-                    this.updateLS();
-                    break
-                }
-                i++;
-            }
+        deleteTask(index){
+            this.tasks.splice(index, 1)
+            this.updateLS();
         },
         updateLS(){
-            localStorage.setItem('tasks', JSON.stringify(this.tasks))
+            localStorage.setItem('tasks', JSON.stringify(this.tasks));
+            localStorage.setItem('tasksid', JSON.stringify(this.id));
         }
     },
     beforeMount(){
