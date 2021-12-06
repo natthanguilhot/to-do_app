@@ -1,5 +1,5 @@
 <template>
-    <div class="Home bg-gray-800 text-white">
+    <div class="Home flex flex-col bg-gradient-to-b from-gray-700 to-gray-900 text-white text-xl">
         <header class="py-10 text-4xl font-bold">
             <h1>Online To-Do App par <a href="https://www.linkedin.com/in/natthanguilhot/" target="_blank" rel="noopener" class="opacity-70 hover:opacity-100 underline hover:no-underline">Natthan Guilhot</a></h1>
         </header>
@@ -18,7 +18,7 @@
             </div>
         </main>
         <footer class="aboslute bottom-0">
-            <p class="bottom-0">Toutes vos données sont stocké sur votre navigateur.<br><span class="text-red-600">Attention</span> : Si vous videz votre cache, vos données seront affectés !</p>
+            <p class="mb-4">Toutes vos données sont stocké sur votre navigateur.<br><span class="text-red-600">Attention</span> : Si vous videz votre cache, vos données seront affectés !</p>
         </footer>
     </div>
 </template>
@@ -51,7 +51,6 @@ export default {
             let i = 0;
             for(let task of this.tasks){
                 if(task.id == id && task.task == text){
-                    console.log(this.tasks);
                     this.tasks.splice(i, 1)
                     this.updateLS();
                     break
@@ -77,7 +76,7 @@ export default {
 
 <style lang="scss">
 .Home {
-    height:85vh;
+    height:100vh;
 }
 html {
     background-color:#1F2937;
