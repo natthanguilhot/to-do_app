@@ -18,7 +18,7 @@
             </div>
         </main>
         <footer class="aboslute bottom-0">
-            <p class="mb-4">Toutes vos données sont stocké sur votre navigateur.<br><span class="text-red-600">Attention</span> : Si vous videz votre cache, vos données seront affectés !</p>
+            <p class="mb-4">Toutes vos données sont stockées sur votre navigateur.<br><span class="text-red-600">Attention</span> : si vous videz votre cache, vos données seront affectées !</p>
         </footer>
     </div>
 </template>
