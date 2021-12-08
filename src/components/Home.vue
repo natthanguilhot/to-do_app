@@ -18,7 +18,7 @@
             </div>
         </main>
         <footer class="aboslute bottom-0">
-            <p class="mb-4">Toutes vos données sont stockées sur votre navigateur.<br><span class="text-red-600">Attention</span> : si vous videz stockage local, vos données seront affectées !</p>
+            <p class="mb-4">Toutes vos données sont stockées sur votre navigateur.<br><span class="text-red-600">Attention</span> : si vous videz le stockage local, vos données seront affectées !</p>
         </footer>
     </div>
 </template>
