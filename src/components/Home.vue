@@ -17,9 +17,6 @@
                 </div>
             </div>
         </main>
-        <section class="t bg-gradient-to-b from-gray-700 to-gray-900">
-
-        </section>
         <footer class="aboslute bottom-0">
             <div class="flex justify-center items-center space-x-8 w-full">
                 <a aria-label="Lien vers mon Linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/in/natthanguilhot" class="text-5xl text-[#007BB5]"><i class="fab fa-linkedin"></i></a>
@@ -87,11 +84,5 @@ html {
     &:hover > button {
         visibility: visible !important;
     }
-}
-.t {
-    position: absolute;
-    top: 10rem;
-    height: 350px;
-    width: 350px;
 }
 </style>
