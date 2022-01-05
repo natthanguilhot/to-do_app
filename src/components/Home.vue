@@ -1,7 +1,7 @@
 <template>
     <div class="Home flex flex-col bg-gradient-to-b from-gray-700 to-gray-900 text-white text-xl">
         <header class="py-10 text-4xl font-bold">
-            <h1>Online To-Do App par <a href="https://www.linkedin.com/in/natthanguilhot/" target="_blank" rel="noopener" class="opacity-70 hover:opacity-100 underline hover:no-underline">Natthan Guilhot</a></h1>
+            <h1>Online To-Do List</h1>
         </header>
         <main class="flex flex-col justify-start items-center h-full">
             <div class="flex justify-center items-center m-10">
@@ -10,14 +10,22 @@
                 <button @click="addTask()" class="h-8 w-8 border ml-2 rounded focus:ring-2 focus:ring-yellow-400 outline-none" aria-label="Ajouter une tâche"><i class="fas fa-pen"></i></button>
             </div>
             <div class="flex flex-col justify-center items-start">
-                <div v-for="(task, index) in tasks" :key="task" class="flex justify-center items-center">
+                <div v-for="(task, index) in tasks" :key="task" class="flex justify-center items-center list">
                     <input type="checkbox" v-model="task.done" :value="task.done" :id="task.task + ' ' + task.id" class="mr-2 w-5 h-5 focus:ring-2 focus:ring-yellow-400 outline-none" @change="updateLS()"/>
                     <label :for="task.task + ' ' + task.id" :class="{'line-through opacity-70' : task.done}" class="transition-all duration-300">{{task.task}}</label>
-                    <button class="ml-2 text-red-400 cursor-pointer border rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none" @click="deleteTask(index)" >X</button>
+                    <button class="ml-2 text-red-400 cursor-pointer rounded h-6 w-6 justify-center items-center flex focus:ring-2 focus:ring-yellow-400 outline-none invisible" @click="deleteTask(index)" >X</button>
                 </div>
             </div>
         </main>
+        <section class="t bg-gradient-to-b from-gray-700 to-gray-900">
+
+        </section>
         <footer class="aboslute bottom-0">
+            <div class="flex justify-center items-center space-x-8 w-full">
+                <a aria-label="Lien vers mon Linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/in/natthanguilhot" class="text-5xl text-[#007BB5]"><i class="fab fa-linkedin"></i></a>
+                <a aria-label="Lien vers mon adresse mail" href="mailto:natthan.dev@gmail.com" class="text-5xl text-[#db4a39]"><i class="fas fa-envelope"></i></a>
+            </div>
+
             <p class="mb-4">Toutes vos données sont stockées sur votre navigateur.<br><span class="text-red-600">Attention</span> : si vous videz le stockage local, vos données seront affectées !</p>
         </footer>
     </div>
@@ -74,5 +82,16 @@ export default {
 }
 html {
     background-color:#1F2937;
+}
+.list {
+    &:hover > button {
+        visibility: visible !important;
+    }
+}
+.t {
+    position: absolute;
+    top: 10rem;
+    height: 350px;
+    width: 350px;
 }
 </style>
